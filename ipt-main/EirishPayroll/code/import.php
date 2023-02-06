@@ -14,8 +14,8 @@ if(isset($_POST["importSubmit"])){
         {
             $bug++ ;
             if($getData[0] !=''){
-                $sql = "INSERT into attendancee (id,emp_id,name,dateTime,logType) 
-                        values ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."','".$getData[4]."')";
+                $sql = "INSERT into attendancee (id,emp_id,name,dateTime,logtype,dateTime1,logtypeout) 
+                        values ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."','".$getData[4]."','".$getData[5]."','".$getData[6]."')";
                 $result = mysqli_query($con, $sql);
             }
         }fclose($file);

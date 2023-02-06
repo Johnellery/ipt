@@ -12,8 +12,8 @@ if(isset($_POST['signup'])){
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
     
-    if (strlen($password) <= 4) {
-      $errors = "Password must contain at least 8 or more characters.";
+    if (strlen($password) < 7 || strlen($cpassword) < 7 || !preg_match('/[A-Z]/', $password)) {
+        $errors[] = "Password must contain at least 8 characters, including at least one uppercase letter.";
     }
     if($password !== $cpassword){
         $errors['password'] = "Confirm password not matched!";
@@ -156,30 +156,34 @@ if(isset($_POST['signup'])){
     }
 
     //if user click change password button
-    if(isset($_POST['change-password'])){
-        $_SESSION['info'] = "";
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
-        if($password !== $cpassword){
-            $errors['password'] = "Confirm password not matched!";
-        }else{
+if (isset($_POST['change-password'])) {
+    $_SESSION['info'] = "";
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+
+    if ($password !== $cpassword) {
+        $errors['password'] = "Confirm password not matched!";
+    } else {
+        if (strlen($password) < 7 || strlen($cpassword) < 7 || !preg_match('/[A-Z]/', $password)) {
+            $errors[] = "Password must contain at least 8 characters, including at least one uppercase letter.";
+        } else {
             $code = 0;
             $email = $_SESSION['email']; //getting this email using session
             $encpass = password_hash($password, PASSWORD_BCRYPT);
             $update_pass = "UPDATE users SET code = $code, password = '$encpass' WHERE email = '$email'";
             $run_query = mysqli_query($con, $update_pass);
-            if($run_query){
+            if ($run_query) {
                 $info = "Your password changed. Now you can login with your new password.";
                 $_SESSION['info'] = $info;
                 header('Location: password-changed.php');
-            }else{
+            } else {
                 $errors['db-error'] = "Failed to change your password!";
             }
         }
     }
-    
-   //if login now button click
-    if(isset($_POST['login-now'])){
+    //if login now button click
+    if (isset($_POST['login-now'])) {
         header('Location: login-user.php');
     }
+}
 ?>

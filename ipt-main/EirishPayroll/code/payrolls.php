@@ -1,7 +1,8 @@
 <?php
 // Load the database configuration file
-include_once 'connection.php';
-require_once('home.php');  
+ require_once('home.php');  
+ include "connection.php";
+
 // Get status message$result=mysqli_query($con,"select * from employee");
  
 $con=mysqli_connect('localhost','root','','eirish_payroll');
@@ -116,6 +117,7 @@ if(!empty($_GET['status'])){
   </div>
 </div>
 <?php require_once('footer.php'); ?>
+<?Php require_once "script.php";?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>

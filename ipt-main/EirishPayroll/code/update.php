@@ -46,7 +46,7 @@
           
             <div class="page-header">
               <h1 class="page-title">
-                <a href="employee.php" class="text-primary">Employee</a> <i style="font-size: 50px;" class="fa-solid fa-chevrons-right"></i> Edit Profile
+                <a href="employee.php" class="text-primary"></a> <i style="font-size: 50px;" class="fa-solid fa-chevrons-right"></i> Edit Profile
               </h1>
              </div>
 

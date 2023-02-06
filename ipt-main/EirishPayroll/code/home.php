@@ -1,4 +1,5 @@
 <?php require_once "controllerUserData.php"; ?>
+
 <?php   
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
@@ -23,7 +24,6 @@ if($email != false && $password != false){
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +38,7 @@ if($email != false && $password != false){
 </head>
 
 <body>
+  
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
   <a class="navbar-brand " style="margin-left:20px; font-size:26px;" href="#">Dashboard</a>

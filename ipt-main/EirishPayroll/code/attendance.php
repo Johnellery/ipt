@@ -54,12 +54,13 @@ if(!empty($_GET['status'])){
         
        
             <a href="javascript:void(0);" class="btn btn-dark" onclick="formToggle('importFrm');"><i class="plus"></i> Import Attendance</a>
-      
  
     <!-- CSV file upload form -->
     <div class="col-md-12" id="importFrm" style="display: none;">
         <form action="import.php" method="post" enctype="multipart/form-data">
             <input type="file" name="file" />
+            <br>
+            <br>
             <input type="submit" class="btn btn-dark" name="importSubmit" value="IMPORT">
         </form>
     </div>
@@ -69,7 +70,7 @@ if(!empty($_GET['status'])){
                       Add Attendance </button> 
                       <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#add-attendance">
                   Add Time In
-                </button>
+                </button>   
                            <button data-toggle="modal" data-target="#modal-add-attendance-out" class="dropdown-item">Add Time Out</button>
                       </div>
 
@@ -82,7 +83,9 @@ if(!empty($_GET['status'])){
                         <th>EmpID</th>
                         <th>Name</th>
                         <th>Datelog</th>
-                        <th>In/Out Status</th>
+                        <th>In Status</th>
+                        <th>Datelog</th>
+                        <th>Out Status</th>
                       </tr>
 
                 </thead>
@@ -95,6 +98,8 @@ if(!empty($_GET['status'])){
                           <td><?php echo $row['name']?></td>
                           <td><?php echo $row['dateTime']?></td>
                           <td><?php echo $row['logType']?></td>
+                          <td><?php echo $row['dateTime1']?></td>
+                          <td><?php echo $row['logTypeout']?></td>
                       </tr>
                           
 

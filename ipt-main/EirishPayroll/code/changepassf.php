@@ -1,66 +1,45 @@
-<?php 
+<?php
 session_start();
+include "connection.php";
 
-if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+$password = $_POST['password'];
+$password2 = $_POST['password2'];
+$old_password = $_POST['old_password'];
 
-    include "connection.php";
+$stmt = $con->prepare("SELECT password FROM plus_signup WHERE id = :id");
+$stmt->bindParam(":id", $_SESSION['id'], PDO::PARAM_STR, 15);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_OBJ);
 
-if (isset($_POST['op']) && isset($_POST['np'])
-    && isset($_POST['c_np'])) {
+$status = "OK";
+$msg = "";
 
-	function validate($data){
-       $data = trim($data);
-	   $data = stripslashes($data);
-	   $data = htmlspecialchars($data);
-	   return $data;
-	}
-
-	$op = validate($_POST['op']);
-	$np = validate($_POST['np']);
-	$c_np = validate($_POST['c_np']);
-    
-    if(empty($op)){
-      header("Location: change-password.php?error=Old Password is required");
-	  exit();
-    }else if(empty($np)){
-      header("Location: change-password.php?error=New Password is required");
-	  exit();
-    }else if($np !== $c_np){
-      header("Location: change-password.php?error=The confirmation password  does not match");
-	  exit();
-    }else {
-    	// hashing the password
-    	$op = md5($op);
-    	$np = md5($np);
-        $id = $_SESSION['id'];
-
-        $sql = "SELECT password
-                FROM users WHERE 
-                id='$id' AND password='$op'";
-        $result = mysqli_query($con, $sql);
-        if(mysqli_num_rows($result) === 1){
-        	
-        	$sql_2 = "UPDATE users
-        	          SET password='$np'
-        	          WHERE id='$id'";
-        	mysqli_query($con, $sql_2);
-        	header("Location: changepass.php?success=Your password has been changed successfully");
-	        exit();
-
-        }else {
-        	header("Location: changepass.php?error=Incorrect password");
-	        exit();
-        }
-
-    }
-
-    
-}else{
-	header("Location: changepass.php");
-	exit();
+if ($row->password != md5($old_password)) {
+  $msg .= "Your old password is not matching as per our record.<br>";
+  $status = "NOTOK";
 }
 
-}else{
-     header("Location: home.php");
-     exit();
+if (strlen($password) < 3 || strlen($password) > 8) {
+  $msg .= "Password must be more than 3 characters in length and a maximum of 8 characters.<br>";
+  $status = "NOTOK";
 }
+
+if ($password != $password2) {
+  $msg .= "Both passwords do not match.<br>";
+  $status = "NOTOK";
+}
+
+if ($status != "OK") {
+  echo "<font face='Verdana' size='2' color='red'>$msg</font><br><center><input type='button' value='Retry' onclick='history.go(-1)'></center>";
+} else {
+  $password = md5($password);
+  $sql = $con->prepare("UPDATE plus_signup SET password = :password WHERE userid = :userid");
+  $sql->bindParam(":password", $password, PDO::PARAM_STR, 32);
+  $sql->bindParam(":userid", $_SESSION['userid'], PDO::PARAM_STR, 32);
+  if ($sql->execute()) {
+    echo "<font face='Verdana' size='2'><center>Thanks <br> Your password has been changed successfully. Please keep changing your password for better security</font></center>";
+  } else {
+    echo "<font face='Verdana' size='2' color='red'><center>Sorry <br> Failed to change password. Contact the site admin</font></center>";
+  }
+}
+?>

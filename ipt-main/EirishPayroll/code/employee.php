@@ -25,7 +25,7 @@
                 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Add Employee
                 </button>
-                
+                <button type="button" class="btn btn-dark" onclick="location.href='export.php'">Export to CSV</button>
        <div class="border-bottom my-3"></div>
           <table class="table table-hover">
                   <thead>

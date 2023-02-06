@@ -6,6 +6,7 @@
     <title>Payroll</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="container">
@@ -33,7 +34,9 @@
                     </div>
                     <div class="form-group">
                     <label>Password</label>
-                        <input class="form-control" type="password" name="password" placeholder="Enter your Password" required>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Enter your Password" required>
+                        <br>
+                        
                     </div>
                     <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
                     <div class="form-group">

@@ -1,4 +1,7 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php 
+require_once "controllerUserData.php";
+require_once "show.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,12 +52,13 @@
                     </div>
                     <div class="form-group">
                     <label>Password</label>
-                        <input class="form-control" type="password" name="password" placeholder="Enter your Password" required>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Enter your Password" required>
                     </div>
                     <div class="form-group">
                     <label>Confirm Password</label>
-                        <input class="form-control" type="password" name="cpassword" placeholder="Confirm your password" required>
+                        <input class="form-control" type="password" name="cpassword" id="cpass" placeholder="Confirm your password" required>
                     </div>
+
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="signup" value="Create new account">
                     </div>
