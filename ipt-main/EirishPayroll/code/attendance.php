@@ -11,7 +11,7 @@ if(!empty($_GET['status'])){
     switch($_GET['status']){
         case 'succ':
             $statusType = 'alert-success';
-            $statusMsg = 'Members data has been imported successfully.';
+            $statusMsg = 'Employee data has been imported successfully.';
             break;
         case 'err':
             $statusType = 'alert-danger';
@@ -59,8 +59,7 @@ if(!empty($_GET['status'])){
     <div class="col-md-12" id="importFrm" style="display: none;">
         <form action="import.php" method="post" enctype="multipart/form-data">
             <input type="file" name="file" />
-            <br>
-            <br>
+
             <input type="submit" class="btn btn-outline-primary" name="importSubmit" value="IMPORT">
         </form>
     </div>

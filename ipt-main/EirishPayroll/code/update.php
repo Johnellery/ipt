@@ -115,8 +115,8 @@
                       </div>
                     </div>
                 <div class=" mt-3 d-grid gap-3 d-flex justify-content-end "> 
-                    <a href="employee.php" class="btn btn-dark">Cancel</a> 
-                    <button type="submit"  name="editData"  class="btn btn-dark">Update</button>
+                    <a href="employee.php" class="btn btn-outline-danger">Cancel</a> 
+                    <button type="submit"  name="editData"  class="btn btn-outline-primary">Update</button>
                 </div>
         </table>
         <?php require_once('footer.php'); ?>     

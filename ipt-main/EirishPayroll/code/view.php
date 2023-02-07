@@ -25,9 +25,12 @@ $row = mysqli_fetch_assoc($result);
         <div class="container">
           
             <div class="page-header">
+              <br>
+              <br>
               <h1 class="page-title">
-                <a href="employee.php" class="text-primary">Employee</a> <i style="font-size: 50px;" class="fa-solid fa-chevrons-right"></i> View Profile
+                <a href="employee.php" class="text-primary">Back</a> <i style="font-size: 50px;" class="fa-solid fa-chevrons-right"></i> View Profile
               </h1>
+
              </div>
 
              <input type="hidden" name="id" class="txtField" value="<?php echo $row['emp_id']; ?>">
@@ -96,6 +99,10 @@ $row = mysqli_fetch_assoc($result);
                     </div>
                 
         </table>
+        <br>
+              <br>
+              <br>
+
         <?php require_once('footer.php'); ?>     
        </div>
       

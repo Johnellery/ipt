@@ -1,8 +1,7 @@
 <?php
 // Load the database configuration file
- require_once('home.php');  
- include "connection.php";
-
+include_once 'connection.php';
+require_once('home.php');  
 // Get status message$result=mysqli_query($con,"select * from employee");
  
 $con=mysqli_connect('localhost','root','','eirish_payroll');
@@ -12,7 +11,7 @@ if(!empty($_GET['status'])){
     switch($_GET['status']){
         case 'succ':
             $statusType = 'alert-success';
-            $statusMsg = 'Members data has been imported successfully.';
+            $statusMsg = 'Employee data has been imported successfully.';
             break;
         case 'err':
             $statusType = 'alert-danger';
@@ -41,6 +40,7 @@ if(!empty($_GET['status'])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datatable</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
  
@@ -53,14 +53,14 @@ if(!empty($_GET['status'])){
             
         
        
-            <a href="javascript:void(0);" class="btn btn-dark" onclick="formToggle('importFrm');"><i class="plus"></i> Import Payroll</a>
+            <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="formToggle('importFrm');"><i class="plus"></i> Import Payroll</a>
       
  
     <!-- CSV file upload form -->
     <div class="col-md-12" id="importFrm" style="display: none;">
         <form action="importpayroll.php" method="post" enctype="multipart/form-data">
             <input type="file" name="file" />
-            <input type="submit" class="btn btn-dark" name="Import" value="IMPORT">
+            <input type="submit" class="btn btn-outline-primary" name="Import" value="IMPORT">
         </form>
     </div>
                  
@@ -116,7 +116,6 @@ if(!empty($_GET['status'])){
   </div>
 </div>
 <?php require_once('footer.php'); ?>
-<?Php require_once "script.php";?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
