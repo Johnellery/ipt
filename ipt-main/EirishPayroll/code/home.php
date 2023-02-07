@@ -41,7 +41,7 @@ if($email != false && $password != false){
   
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-  <a class="navbar-brand " style="margin-left:20px; font-size:26px;" href="#">Dashboard</a>
+  <a class="navbar-brand " style="margin-left:20px; font-size:26px;" href="#">Eirish</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,14 +53,21 @@ if($email != false && $password != false){
             Employee
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="employee.php">Employee</a></li>
-            <li><a class="dropdown-item" href="trash.php">Archive</a></li>
+            <li><a class="dropdown-item" href="employee.php">List of Employee</a></li>
+            <li><a class="dropdown-item" href="trash.php">Archive Employee</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" style="margin-left:50px;">
+       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Attendance
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="attendance.php">List of Attendance</a></li>
+            <li><a class="dropdown-item" href="trash_attendance.php">Archive Attendance</a></li>
           </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="attendance.php">Attendance</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="payrolls.php">Payroll</a>
         </li>

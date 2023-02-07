@@ -17,3 +17,5 @@ function togglePasswordVisibility() {
 }
   </script>
 
+<input type="checkbox" onclick="togglePasswordVisibility()"> Show password</input>
+                    <br>

@@ -83,9 +83,8 @@ if(!empty($_GET['status'])){
                         <th>EmpID</th>
                         <th>Name</th>
                         <th>Datelog</th>
-                        <th>In Status</th>
-                        <th>Datelog</th>
-                        <th>Out Status</th>
+                        <th>In/Out Status</th>
+                        <th>Actions</th>
                       </tr>
 
                 </thead>
@@ -94,12 +93,13 @@ if(!empty($_GET['status'])){
                       <tr>
                           <td><?php echo $row['id']?></td>
                     
-                          <td><?php echo $row['emp_id']?></td>
+                          <td><?php echo $row['id']?></td>
                           <td><?php echo $row['name']?></td>
                           <td><?php echo $row['dateTime']?></td>
                           <td><?php echo $row['logType']?></td>
-                          <td><?php echo $row['dateTime1']?></td>
-                          <td><?php echo $row['logTypeout']?></td>
+                          <td>
+                            <a href="archive_attendance.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Archive</a>
+                          </td>
                       </tr>
                           
 

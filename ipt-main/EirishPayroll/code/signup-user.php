@@ -1,6 +1,6 @@
 <?php 
 require_once "controllerUserData.php";
-require_once "show.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +9,7 @@ require_once "show.php";
     <title>Payroll</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="container">
@@ -53,6 +54,7 @@ require_once "show.php";
                     <div class="form-group">
                     <label>Password</label>
                         <input class="form-control" type="password" name="password" id="password" placeholder="Enter your Password" required>
+
                     </div>
                     <div class="form-group">
                     <label>Confirm Password</label>
@@ -67,6 +69,6 @@ require_once "show.php";
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 require_once "home.php";
 
 $con=mysqli_connect('localhost','root','','eirish_payroll');
-$result=mysqli_query($con,"select * from archive");
+$result=mysqli_query($con,"select * from archive_attendancee");
 
 ?>
 
@@ -24,11 +24,11 @@ $result=mysqli_query($con,"select * from archive");
       <table id="example" class="table table-hover" style="width:100%">
             <thead>
                 <tr>
+                <th>ID</th>
                     <th>EmpID</th>
                     <th>Name</th>
-                    <th>address</th>
-                    <th>position</th>
-                    <th>rate</th>
+                    <th>Datalog</th>
+                    <th>In/Out Status</th>
 
                     <th>Actions</th>
                 </tr>
@@ -37,14 +37,14 @@ $result=mysqli_query($con,"select * from archive");
                  <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <tr >
                         <td><?php echo $row['id']?></td>
+                        <td><?php echo $row['id']?></td>
                           <td><?php echo $row['name']?></td>
-                          <td><?php echo $row['address']?></td>
-                          <td><?php echo $row['position']?></td>
-                          <td><?php echo $row['rate']?></td> 
+                          <td><?php echo $row['dateTime']?></td>
+                          <td><?php echo $row['logType']?></td>
                           
                           <td  class="border-start border-end" style="margin-top:10px;">
-                          <a href="undo.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Restore</a>
-                          <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Delete</a>
+                          <a href="restore_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Restore</a>
+                          <a href="delete_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Delete</a>
                           </td>
                     </tr>
             </tbody>
@@ -57,7 +57,7 @@ $result=mysqli_query($con,"select * from archive");
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Employee Info</h4>
+                            <h4 class="modal-title">Attendance Info</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
