@@ -20,7 +20,7 @@ if (isset($_POST['save'])) {
     $emergency_name = ucwords($_POST['emergency_name']);
     $emergency_contact = $_POST['emergency_contact'];
 
-    $con= "INSERT INTO `employee` (`emp_id`, `name`, `address`, `position`, `rate`, `phonenumber`, `sex`, `civil_status`, `emergency_name`, `emergency_contact`) VALUES ('$emp_id', '$name', '$address', '$position', '$rate', '$phonenumber', '$sex', '$civil_status', '$emergency_name', '$emergency_contact');";
+    $con= "INSERT INTO `employee` (`name`, `address`, `position`, `rate`, `phonenumber`, `sex`, `civil_status`, `emergency_name`, `emergency_contact`) VALUES ('$name', '$address', '$position', '$rate', '$phonenumber', '$sex', '$civil_status', '$emergency_name', '$emergency_contact');";
     
     
     $query = mysqli_query($conn, $con) or die("fuck: $con");
@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
 ?>
 
     <div class="modal fade" id="exampleModal" tabhome="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-               <form method="POST">
+    <form method="POST">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -61,6 +61,25 @@ if (isset($_POST['save'])) {
                          <option value="Single">Single</option>
                          <option value="Married">Married</option>
                          <option value="Separated">Separated</option>
+                         </select>
+                         <label class="form-label mt-4">Person to be contacted in case of emergency</label>
+                        <div class="form-group">
+                            <input name="emergency_name" type="text" class="form-control" required placeholder="Enter name details...">
+                        </div>
+                        <label class="form-label mt-4">His/her contact details</label>
+                        <div class="form-group">
+                            <input name="emergency_contact" type="tel" pattern="[0-9]{10,11}" class="form-control" required placeholder="Enter contact details...">
+                        </div>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button name="save" type="submit" class="btn btn-primary">Save</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
                          </select>
                          <label class="form-label mt-4">Person to be contacted in case of emergency</label>
                          <input name="emergency_name" type="text" class="form-control" required placeholder="Enter name details...">

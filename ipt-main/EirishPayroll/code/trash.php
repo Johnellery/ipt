@@ -17,63 +17,54 @@ $result=mysqli_query($con,"select * from archive");
     <title>Payroll</title>
 </head>
 <body>
-<div class="border border-dark bg-danger">
- <h1 class="text-white d-flex justify-content-center" style="font-size:25px; margin-top:25px; margin-bottom:25px;">Archive Employees</h1>
+<div class="bg-danger text-white py-3">
+  <h1 class="text-center font-weight-bold" style="font-size:25px;">Archive Employees</h1>
 </div>
-    <div class="container" style="margin-top:80px;">
-      <table id="example" class="table table-hover" style="width:100%">
-            <thead>
-                <tr>
-                    <th>EmpID</th>
-                    <th>Name</th>
-                    <th>address</th>
-                    <th>position</th>
-                    <th>rate</th>
 
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody >
-                 <?php while($row=mysqli_fetch_assoc($result)){ ?>
-                    <tr >
-                        <td><?php echo $row['id']?></td>
-                          <td><?php echo $row['name']?></td>
-                          <td><?php echo $row['address']?></td>
-                          <td><?php echo $row['position']?></td>
-                          <td><?php echo $row['rate']?></td> 
-                          
-                          <td  class="border-start border-end" style="margin-top:10px;">
-                          <a href="undo.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Restore</a>
-                          <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Delete</a>
-                          </td>
-                    </tr>
-            </tbody>
-            <?php } ?>
-           
-      </table>
+<div class="container my-5">
+  <table id="example" class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Position</th>
+        <th>Rate</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php while($row=mysqli_fetch_assoc($result)){ ?>
+      <tr>
+        <td><?php echo $row['id']?></td>
+        <td><?php echo $row['name']?></td>
+        <td><?php echo $row['address']?></td>
+        <td><?php echo $row['position']?></td>
+        <td><?php echo $row['rate']?></td> 
+        <td class="d-flex justify-content-around">
+          <a href="undo.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Restore</a>
+          <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Delete</a>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
+</div>
 
-
-      <div class="modal fade" id="empModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Employee Info</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-        </div>
-
+<div class="modal fade" id="empModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h4 class="modal-title">Employee Info</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
-
-   
-
-
+  </div>
+</div>
 
 
 

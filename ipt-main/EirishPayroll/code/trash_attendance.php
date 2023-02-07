@@ -18,7 +18,7 @@ $result=mysqli_query($con,"select * from archive_attendancee");
 </head>
 <body>
 <div class="border border-dark bg-danger">
- <h1 class="text-white d-flex justify-content-center" style="font-size:25px; margin-top:25px; margin-bottom:25px;">Archive Employees</h1>
+ <h1 class="text-white d-flex justify-content-center" style="font-size:25px; margin-top:25px; margin-bottom:25px;">Archive Attendances</h1>
 </div>
     <div class="container" style="margin-top:80px;">
       <table id="example" class="table table-hover" style="width:100%">

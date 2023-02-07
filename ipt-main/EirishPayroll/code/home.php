@@ -1,4 +1,7 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "controllerUserData.php"; 
+
+
+?>
 
 <?php   
 $email = $_SESSION['email'];
@@ -33,67 +36,58 @@ if($email != false && $password != false){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payroll</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
 </head>
 
 <body>
-  
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-  <a class="navbar-brand " style="margin-left:20px; font-size:26px;" href="#">Eirish</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Eirish Builders</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-          
-      <li class="nav-item dropdown" style="margin-left:50px;">
-       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Employee
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="employee.php">List of Employee</a></li>
-            <li><a class="dropdown-item" href="trash.php">Archive Employee</a></li>
-          </ul>
+          <div class="dropdown-menu" aria-labelledby="employeeDropdown">
+            <a class="dropdown-item" href="employee.php">List of Employee</a>
+            <a class="dropdown-item" href="trash.php">Archive Employee</a>
+          </div>
         </li>
-        <li class="nav-item dropdown" style="margin-left:50px;">
-       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Attendance
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="attendance.php">List of Attendance</a></li>
-            <li><a class="dropdown-item" href="trash_attendance.php">Archive Attendance</a></li>
-          </ul>
+          <div class="dropdown-menu" aria-labelledby="attendanceDropdown">
+            <a class="dropdown-item" href="attendance.php">List of Attendance</a>
+            <a class="dropdown-item" href="trash_attendance.php">Archive Attendance</a>
+          </div>
         </li>
-
-
         <li class="nav-item">
           <a class="nav-link" href="payrolls.php">Payroll</a>
         </li>
-        
-      <li class="nav-item dropdown" style="margin-left:50px;">
-       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown" style="margin-left: 170px; ">
+          <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account Profile
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-            <li><a class="dropdown-item" href="changepass.php">Change Password</a></li>
-         
-            <li><hr class="dropdown-divider"></li>
-            <li><a href="logout.php" class="dropdown-item" href="#">Log Out</a></li>
-          </ul>
+          <div class="dropdown-menu" aria-labelledby="accountDropdown">
+            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a class="dropdown-item" href="changepass.php">Change Password</a>
+            <div class="dropdown-divider"></div>
+            <a href="logout.php" class="dropdown-item">Log Out</a>
+          </div>
         </li>
-
-</ul>
-
-</div>
-        
       </ul>
     </div>
   </div>
 </nav>
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
