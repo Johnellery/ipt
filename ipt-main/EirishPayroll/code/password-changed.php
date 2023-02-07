@@ -24,7 +24,7 @@ if($_SESSION['info'] == false){
                 </div>
                 <?php
             }
-            header('location: new-password.php');
+            header('location: login-user.php');
             ?>
             </div>
         </div>

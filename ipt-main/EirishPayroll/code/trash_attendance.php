@@ -43,8 +43,8 @@ $result=mysqli_query($con,"select * from archive_attendancee");
                           <td><?php echo $row['logType']?></td>
                           
                           <td  class="border-start border-end" style="margin-top:10px;">
-                          <a href="restore_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Restore</a>
-                          <a href="delete_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Delete</a>
+                          <a href="restore_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Restore</a>
+                          <a href="delete_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Delete</a>
                           </td>
                     </tr>
             </tbody>

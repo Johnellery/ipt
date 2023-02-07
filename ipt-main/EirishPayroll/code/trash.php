@@ -41,7 +41,7 @@ $result=mysqli_query($con,"select * from archive");
         <td><?php echo $row['address']?></td>
         <td><?php echo $row['position']?></td>
         <td><?php echo $row['rate']?></td> 
-        <td class="d-flex justify-content-around">
+        <td >
           <a href="undo.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Restore</a>
           <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Delete</a>
         </td>

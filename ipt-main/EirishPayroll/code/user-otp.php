@@ -45,6 +45,7 @@ if($email == false){
                     <label>Code Verification</label>
                         <input class="form-control" type="number" name="otp" placeholder="Enter your verification code" required>
                     </div>
+                    <div class="link login-link text-center">Go back ? <a href="signup-user.php">Sign up</a></div>
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="check" value="Submit">
                     </div>

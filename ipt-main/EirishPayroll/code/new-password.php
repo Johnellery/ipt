@@ -49,6 +49,7 @@ if($email == false){
                     <label>Confirm Password</label>
                         <input class="form-control" type="password" name="cpassword" placeholder="Confirm your password" required>
                     </div>
+                    <div class="link forget-pass text-left">Go back ? <a href="login-user.php">Login</a></div>
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="change-password" value="Change">
                     </div>

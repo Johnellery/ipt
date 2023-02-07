@@ -98,7 +98,7 @@ if(!empty($_GET['status'])){
                           <td><?php echo $row['dateTime']?></td>
                           <td><?php echo $row['logType']?></td>
                           <td>
-                            <a href="archive_attendance.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Archive</a>
+                            <a href="archive_attendance.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Archive</a>
                           </td>
                       </tr>
                           
