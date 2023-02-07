@@ -53,7 +53,7 @@ if(!empty($_GET['status'])){
             
         
        
-            <a href="javascript:void(0);" class="btn btn-dark" onclick="formToggle('importFrm');"><i class="plus"></i> Import Attendance</a>
+            <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="formToggle('importFrm');"><i class="plus"></i> Import Attendance</a>
  
     <!-- CSV file upload form -->
     <div class="col-md-12" id="importFrm" style="display: none;">
@@ -61,12 +61,12 @@ if(!empty($_GET['status'])){
             <input type="file" name="file" />
             <br>
             <br>
-            <input type="submit" class="btn btn-dark" name="importSubmit" value="IMPORT">
+            <input type="submit" class="btn btn-outline-primary" name="importSubmit" value="IMPORT">
         </form>
     </div>
                  
                       <div style="padding-top: 10px;" class="dropdown-menu">
-                      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
                       Add Attendance </button> 
                       <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#add-attendance">
                   Add Time In
@@ -98,7 +98,7 @@ if(!empty($_GET['status'])){
                           <td><?php echo $row['dateTime']?></td>
                           <td><?php echo $row['logType']?></td>
                           <td>
-                            <a href="archive_attendance.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Archive</a>
+                            <a href="archive_attendance.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-danger">Archive</a>
                           </td>
                       </tr>
                           

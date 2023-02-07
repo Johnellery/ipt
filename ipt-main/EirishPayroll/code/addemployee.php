@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
 ?>
 
     <div class="modal fade" id="exampleModal" tabhome="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form method="POST">
+               <form method="POST">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -63,32 +63,13 @@ if (isset($_POST['save'])) {
                          <option value="Separated">Separated</option>
                          </select>
                          <label class="form-label mt-4">Person to be contacted in case of emergency</label>
-                        <div class="form-group">
-                            <input name="emergency_name" type="text" class="form-control" required placeholder="Enter name details...">
-                        </div>
-                        <label class="form-label mt-4">His/her contact details</label>
-                        <div class="form-group">
-                            <input name="emergency_contact" type="tel" pattern="[0-9]{10,11}" class="form-control" required placeholder="Enter contact details...">
-                        </div>
-                      </div>
-                      <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button name="save" type="submit" class="btn btn-primary">Save</button>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </form>
-                         </select>
-                         <label class="form-label mt-4">Person to be contacted in case of emergency</label>
                          <input name="emergency_name" type="text" class="form-control" required placeholder="Enter name details...">
                          <label class="form-label mt-4">His/her contact details</label>
                         <input name="emergency_contact" type="number" maxlength="11" min="0" onkeypress="limitKeypress(event,this.value,11)" class="form-control" required placeholder="Enter contact details...">    
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                        <button name="save" type="submit" class="btn btn-dark">Save</button>
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                        <button name="save" type="submit" class="btn btn-outline-success">Save</button>
                       </div>
                     </div>
                   </div>

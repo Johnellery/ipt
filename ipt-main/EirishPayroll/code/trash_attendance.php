@@ -43,8 +43,8 @@ $result=mysqli_query($con,"select * from archive_attendancee");
                           <td><?php echo $row['logType']?></td>
                           
                           <td  class="border-start border-end" style="margin-top:10px;">
-                          <a href="restore_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Restore</a>
-                          <a href="delete_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Delete</a>
+                          <a href="restore_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-success">Restore</a>
+                          <a href="delete_attend.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-danger">Delete</a>
                           </td>
                     </tr>
             </tbody>
@@ -106,7 +106,9 @@ $result=mysqli_query($con,"select * from archive_attendancee");
                
 </body>
 </html>
-
+<br>
+<br>
+<br>
 <?php require_once('footer.php'); ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>

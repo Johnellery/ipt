@@ -19,50 +19,57 @@
  
 </head>
 <body>
-<div class="container" style="margin-top:50px;">    
+ <div class="container" style="margin-top:50px;">    
     
-  <div class="d-flex justify-content-between my-3">
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
-      Add Employee
-    </button>
-    <button type="button" class="btn btn-dark" onclick="location.href='export.php'">Export to CSV</button>
-  </div>
+             <div class="border-bottom my-3"></div>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Add Employee
+                </button>
+                <button type="button" class="btn btn-outline-success" onclick="location.href='export.php'">Export to CSV</button>
+       <div class="border-bottom my-3"></div>
+          <table class="table table-hover">
+                  <thead>
+                      <tr>
+                        <th>EMP ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Position</th>
+                        <th>Rate</th>
+                        <th>Actions</th>
+                      </tr>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>EMP ID</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Position</th>
-        <th>Rate</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php while($row=mysqli_fetch_assoc($result)){?>
-        <tr>
-          <td><?php echo $row['id']?></td>
-          <td><?php echo $row['name']?></td>
-          <td><?php echo $row['address']?></td>
-          <td><?php echo $row['position']?></td>
-          <td><?php echo $row['rate']?></td>
-          <td>
-            <a href="view.php?id=<?php echo $row['id'] ?>">
-              <button class="btn btn-outline-dark">View</button>
-            </a>
-            <a href="update.php?id=<?php echo $row['id'] ?>">
-              <button class="btn btn-outline-dark">Edit</button>
-            </a>
-            <a href="archive.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Archive</a>
-          </td>
-        </tr>
-      <?php } ?>
-    </tbody>
-  </table>
-  <?php require_once('addemployee.php'); ?>
-</div>
+                </thead>
+                    <tbody>
+                          <?php while($row=mysqli_fetch_assoc($result)){?>
+                      <tr>
+                          <td><?php echo $row['id']?></td>
+                          <td><?php echo $row['name']?></td>
+                          <td><?php echo $row['address']?></td>
+                          <td><?php echo $row['position']?></td>
+                          <td><?php echo $row['rate']?></td>
+                          <td>
+                            <a href="view.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-primary">View</button></a>
+                            <a href="update.php?id=<?php echo $row['id'] ?>"><button class="btn btn-outline-primary">Edit</button></a>
+                            <a href="archive.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-danger">Archive</a>
+                            
+                             
+                          </td>
+                      </tr>
+                          
 
+                          <?php } ?>
+                    
+                </thead>
+              
+              </table>
+              
+              <?php require_once('addemployee.php'); ?>
+              
+   </div>
+   <br>
+   <br>
+   <br>
+   <br>
    <?php require_once('footer.php'); ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>

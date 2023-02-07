@@ -44,7 +44,7 @@ if($email != false && $password != false){
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">Eirish Builders</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@ if($email != false && $password != false){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left: 50px; ">
             Employee
           </a>
           <div class="dropdown-menu" aria-labelledby="employeeDropdown">
@@ -73,14 +73,11 @@ if($email != false && $password != false){
         <li class="nav-item">
           <a class="nav-link" href="payrolls.php">Payroll</a>
         </li>
-        <li class="nav-item dropdown" style="margin-left: 170px; ">
+        <li class="nav-item dropdown" style="margin-left: 130px; ">
           <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account Profile
           </a>
           <div class="dropdown-menu" aria-labelledby="accountDropdown">
-            <a class="dropdown-item" href="#">Edit Profile</a>
-            <a class="dropdown-item" href="changepass.php">Change Password</a>
-            <div class="dropdown-divider"></div>
             <a href="logout.php" class="dropdown-item">Log Out</a>
           </div>
         </li>

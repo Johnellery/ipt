@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<footer class="bg-dark text-white py-5">
+<footer class="text-white pt-5 pb-4">
 
 	<div class="container">
 

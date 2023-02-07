@@ -15,8 +15,8 @@
         </div>
       
          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-           <button name="save" type="submit" class="btn btn-dark">Save</button>
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+           <button name="save" type="submit" class="btn btn-outline-success">Save</button>
          </div>
     </div>
   </div>
